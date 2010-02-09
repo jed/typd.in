@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>typd.in - a web-based input method editor</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<link rel="stylesheet" href="css/blueprint/screen.css" type="text/css" media="screen, projection">
+		<link rel="stylesheet" href="css/blueprint/print.css" type="text/css" media="print">    
+		<!--[if IE]><link rel="stylesheet" href="css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+		<link rel="stylesheet" href="css/index.css" type="text/css">    
+
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript">
+
+			$( function() {
+
+				var
+					browser = $.grep( ["mozilla", "safari", "msie", "opera" ], function(n){ return $.browser[n] } )[0],
+					fnString = "var script=document.createElement('script');script.setAttribute('src','http://localhost/~jed/typd.in/index.js#lang=ja');document.body.appendChild(script);",
+					fn = new Function(fnString);
+
+				$("html").addClass(browser);
+				
+				$(".bookmarklet")
+					.attr( "href", "javascript:(function(){" + fnString.replace(/ /g, "%20") + "})()" )
+					.hover(
+						function(){ $("body").css({ backgroundImage: "url(img/arrow.png)" }) },
+						function(){ $("body").css({ backgroundImage: "none" }) }
+					);
+					
+				fn();
+					
+			});
+		
+		</script>
+		<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-1535874-4");
+			pageTracker._trackPageview();
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<hr/>
+			<div id="header" class="container">
+				<div class="span-2">
+					<img src="img/logo_51.png" alt="[あ] typd.in"/>
+				</div>
+				<div class="span-22 last">
+					<h1>
+						<span>
+							<strong>typd.in</strong> lets you type <span class="hilite">in Japanese</span> on the web.<noscript>*</noscript>
+						</span>
+					</h1>
+				</div>
+			</div>
+			<hr/>
+			<noscript>
+				<div class="span-24 last error">* but only if you have Javascript enabled. Please enable Javascript and then <a href="index.html">reload the page</a>.</div>
+			</noscript>
+			<div class="feature span-7 colborder">
+				<h2>in this text area,</h2>
+				<textarea></textarea>
+				<p>Have you ever needed to type in Japanese on a computer that didn't support it? We have, and that's why we built <strong>typd.in</strong>: a <span class="hilite">web-based application</span> that lets you type in Japanese <span class="hilite">even when your computer doesn't let you</span>. Try it above!</p>
+			</div>
+			<div class="feature span-7 colborder">
+				<h2>these text fields,</h2>
+				<input type="text" class="text" />
+				<input type="text" class="text" />
+				<input type="text" class="text" />
+				<input type="text" class="last text" />
+				<p><strong>typd.in</strong> is completely free to use, no strings attached. And since it lives in your browser, you <span class="hilite">don't need to install anything</span>. Just start typing, and <strong>typd.in</strong> will seamlessly handle all of the necessary <i>hiragana</i> and <i>kanji</i> conversion for you.</p>
+			</div>
+			<div class="feature span-8 last">
+				<h2>and anywhere else!</h2>
+				<div>
+					<a href="#" class="bookmarklet">
+						<img src="img/logo_150.png" alt="[あ] typd.in"/>
+					</a>
+				</div>
+				<p>But here's the best part: <span class="hilite">you can use <strong>typd.in</strong> almost anywhere on the web</span>! <span class="mozilla opera safari">Just drag the giant button above to your bookmark toolbar, and then click it to enable Japanese anywhere that you can input text.</span><span class="msie">Just right-click the giant button above, choose <strong>Add to Favorites</strong>, add it to your <strong>Links</strong> folder, and then click the bookmark to enable Japanese anywhere that you can input text.</span> To turn it off, just click it again. Any questions or comments? <a href="http://getsatisfaction.com/langwidget/products/langwidget_typdin">Let us know!</a></p>
+			</div>
+			<hr/>
+			<div id="footer" class="span-24">© 2008 Babel Labs</div>
+		</div>
+	</body>
+</html>
